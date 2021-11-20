@@ -8,11 +8,11 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.w3c.dom.Text;
 
-public class Main {
+public class WordCount {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
         Job job = Job.getInstance(conf, "price count");
-        job.setJarByClass(Main.class);
+        job.setJarByClass(WordCount.class);
         job.setMapperClass(TokenizerMapper.class);
         job.setReducerClass(SumPriceReducer.class);
         job.setOutputKeyClass(Text.class);
